@@ -10,3 +10,6 @@
   display: flex;
   min-height: 100px;
 }
+.list-items {
+  min-height: 100px;
+}
