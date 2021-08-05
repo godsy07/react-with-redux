@@ -32,6 +32,9 @@
   width: 95%;
   cursor: pointer;
 }
+.todo-complete {
+  text-decoration: line-through;
+}
 .todo-del {
   float: right;
   width: 5%;

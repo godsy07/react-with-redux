@@ -18,7 +18,7 @@ const Home = ({ todos, toggleTodo, deleteTodo }) => {
             <div className='todo-item' key={el.id}>
               <span
                 onDoubleClick={() => toggleTodo(el.id)}
-                className='todo-text'
+                className={`todo-text ${el.isDone && "todo-complete"}`}
               >
                 {el.text}
               </span>
