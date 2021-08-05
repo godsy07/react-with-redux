@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 import { addItem } from "../../redux/todoAction";
+import "./Todo.css";
 
 const Todo = ({ addItem }) => {
   const [todo, setTodo] = useState("");
@@ -19,16 +20,14 @@ const Todo = ({ addItem }) => {
   };
 
   return (
-    <div className='todo-area'>
-      <form onSubmit={handleTodoAdd}>
-        <input
-          type='text'
-          value={todo}
-          onChange={(e) => setTodo(e.target.value)}
-        />
-        <button type='submit'>Enter</button>
-      </form>
-    </div>
+    <form className='todo-area' onSubmit={handleTodoAdd}>
+      <input
+        type='text'
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
+      />
+      <button type='submit'>Enter</button>
+    </form>
   );
 };
 

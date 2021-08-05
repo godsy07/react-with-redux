@@ -23,9 +23,15 @@ const rootReducer = (state = initialState, action) => {
     case "ADD_TODO":
       return {
         ...state,
-        todos: [...state.todos, action.todos],
+        todos: [...state.todos, action.payload],
       };
-
+    case "TOGGLE_TODO":
+      console.log(action);
+      return state;
+    case "DEL_TODO":
+      return {
+        todos: state.todos.filter((todo) => todo.id !== action.payload),
+      };
     default:
       return state;
   }
