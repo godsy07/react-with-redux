@@ -26,8 +26,11 @@ const rootReducer = (state = initialState, action) => {
         todos: [...state.todos, action.payload],
       };
     case "TOGGLE_TODO":
-      console.log(action);
-      return state;
+      return {
+        todos: state.todos.map((todo) =>
+          todo.id === action.payload ? { ...todo, isDone: !todo.isDone } : todo
+        ),
+      };
     case "DEL_TODO":
       return {
         todos: state.todos.filter((todo) => todo.id !== action.payload),
