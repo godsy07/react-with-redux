@@ -19,14 +19,16 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-  if (action.type === "ADD_TODO") {
-    return {
-      ...state,
-      todos: [...state.todos, action.todos],
-    };
-  }
+  switch (action.type) {
+    case "ADD_TODO":
+      return {
+        ...state,
+        todos: [...state.todos, action.todos],
+      };
 
-  return state;
+    default:
+      return state;
+  }
 };
 
 export default rootReducer;
