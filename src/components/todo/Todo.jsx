@@ -15,6 +15,7 @@ const Todo = ({ addItem }) => {
     const id = Math.floor(Math.random() * 1000 + 1);
     const todos = { id: id, text: todo, isDone: false };
     addItem(todos);
+    setTodo("");
   };
 
   return (
